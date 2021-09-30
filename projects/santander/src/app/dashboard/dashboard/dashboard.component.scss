@@ -1,0 +1,45 @@
+.active{
+  color: red;
+}
+ul{
+  list-style-type: none;
+}
+.left_side{
+
+  background-color: rgb(250, 244, 244);
+  height:100vh;
+}
+
+.right_side{
+  background-color: #fff;
+  padding: 15px 50px 50px 50px;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.types_links{
+  margin-top: 40px;
+    li{
+        margin: 10px 0px;
+        text-decoration: none;
+        a{
+
+          text-decoration: none;
+
+          font-size: 14px;
+        }
+    }
+}
+
+
+.types_links[_ngcontent-syw-c64] li[_ngcontent-syw-c64] a[_ngcontent-syw-c64] {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+a {
+    color: #1e1e1f;
+    text-decoration: none;
+    background-color: transparent;
+}
+

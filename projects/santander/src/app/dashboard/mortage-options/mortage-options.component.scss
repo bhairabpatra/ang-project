@@ -1,0 +1,51 @@
+p{
+  margin: 0px;
+  padding: 0px;
+}
+.bends{
+  background-color:red;
+  padding: 10px 0px;
+  margin: 20px 0px;
+  font-size: 15px;
+  font-weight: 500;
+  .box{
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      color: #fff;
+      font-size: 12px;
+      .box1{
+        text-align: center;
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+      }
+
+
+  }
+}
+.texts {
+  font-size: 14px;
+}
+
+.what_happens{
+  padding: 10px 0px;
+  font-size: 20px;
+  color: #000;
+  font-weight: 700;
+}
+
+.borders{
+  border: 1px solid #CCC;
+  padding: 20px;
+  background-color: rgb(245, 245, 245);
+
+}
+
+.fixed{
+  font-size: 17px;
+  font-weight: 700;
+}
+
+

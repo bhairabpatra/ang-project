@@ -1,0 +1,19 @@
+{
+  "Sitetitle": "Hoekige site met meerdere talen",
+  "Name": "Naam",
+  "NameError": "Ik weet zeker dat je een naam moet hebben",
+  "Email": "E-mailadres",
+  "Login":"Log in",
+  "passwordforgotmessage":"Klik hier als u uw wachtwoord bent vergeten",
+  "password_forgot":"Wachtwoord vergeten?",
+  "Register":"Registreer hier",
+  "Emailrequired":"E-mail is vereist",
+  "Password_required":"Een wachtwoord is verplicht",
+  "password_len+msg":"wachtwoord moet bestaan ​​uit minstens 6 karakters",
+  "YourSecure" :"Uw gegevens zijn veilig",
+  "PhoneNo": "Telefoon nr",
+  "Password": "Wachtwoord",
+  "Bio": "Voer bio in",
+  "TermsConditions": "Ik ga akkoord met de voorwaarden.",
+  "Submit": "voorleggen"
+}

@@ -3,5 +3,135 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "santander": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/santander",
+      "sourceRoot": "projects/santander/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/santander",
+            "index": "projects/santander/src/index.html",
+            "main": "projects/santander/src/main.ts",
+            "polyfills": "projects/santander/src/polyfills.ts",
+            "tsConfig": "projects/santander/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/santander/src/favicon.ico",
+              "projects/santander/src/assets"
+            ],
+            "styles": [
+              "node_modules/ngx-toastr/toastr.css",
+              "projects/santander/src/styles.scss",
+              "node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js",
+              "node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/santander/src/environments/environment.ts",
+                  "with": "projects/santander/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "santander:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "santander:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "santander:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/santander/src/test.ts",
+            "polyfills": "projects/santander/src/polyfills.ts",
+            "tsConfig": "projects/santander/tsconfig.spec.json",
+            "karmaConfig": "projects/santander/karma.conf.js",
+            "assets": [
+              "projects/santander/src/favicon.ico",
+              "projects/santander/src/assets"
+            ],
+            "styles": [
+              "projects/santander/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/santander/tsconfig.app.json",
+              "projects/santander/tsconfig.spec.json",
+              "projects/santander/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/santander/e2e/protractor.conf.js",
+            "devServerTarget": "santander:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "santander:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  },
+  "defaultProject": "santander"
 }

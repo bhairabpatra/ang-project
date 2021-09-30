@@ -1,0 +1,111 @@
+
+p{
+  padding: 0px;
+  margin: 0px;
+}
+.heading{
+  padding: 25px 0px;
+  font-size: 25px;
+}
+
+.sub_head{
+      font-size: 13px;
+      padding-bottom: 15px;
+}
+
+.chosen{
+    border-bottom: 2px solid #CCC;
+    padding-bottom: 5px;
+}
+
+.fixed_year{
+    padding: 10px 0px;
+}
+.box{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 2rem;
+  padding: 10px 0px 30px 0px;
+  .left_side , .right_side{
+      .list{
+          list-style-type: none;
+          margin-bottom: 20px;
+          font-weight: 700;
+          font-size: 15px;
+          padding: 0px 0px;
+          li{
+              margin: 20px 0px;
+              font-size: 14px;
+          }
+
+      }
+  }
+}
+
+.footer_btn{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1rem;
+    .left{
+        text-align: left;
+        .btn-save-back{
+            border-radius: 30px;
+            background-color: red;
+            border:0px;
+            font-size: 13px;
+        }
+    }
+    .right{
+      text-align: right;
+      .btn-continue{
+        border-radius: 30px;
+        background-color: red;
+        border:0px;
+        font-size: 13px;
+      }
+    }
+}
+
+.table_section{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  .left{
+      border: 1px solid #ccc;
+      padding: 10px;
+  }
+  .right{
+      border: 1px solid #ccc;
+      padding: 10px;
+      .btn-downlaod{
+        border-radius: 30px;
+        background-color: red;
+        border:0px;
+        font-size: 13px;
+      }
+  }
+}
+
+.download_mor{
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 40px;
+}
+
+.download_dec{
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.check_box{
+    font-size: 13px;
+}
+
+.btn-mor-diff{
+  border-radius: 30px;
+  background-color: red;
+  border:0px;
+  font-size: 13px;
+}

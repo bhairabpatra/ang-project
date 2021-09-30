@@ -1,0 +1,175 @@
+
+<app-loader></app-loader>
+
+<div class="conatiner">
+
+  <div class="login_wrapper">
+
+
+
+
+   <h1 class="heading">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, molestias?</h1>
+
+   <h6 class="py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h6>
+   <ul class="list texts">
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ipsam.  </li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ipsam.  </li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ipsam.  </li>
+   </ul>
+
+<div class="py-3">
+<h6>Appling online without Advice</h6>
+<p class="texts">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, libero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, dolorem! </p>
+</div>
+
+<hr class="h_bar">
+<div class="">
+  <h2>Get Started</h2>
+  <p class="texts">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, libero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, dolorem! </p>
+</div>
+
+<h6 class="pt-3">Application information</h6>
+<p class="py-2 texts" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, saepe?</p>
+
+
+<div class="" *ngIf='formHide'>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit( )">
+  <div class="login-form">
+
+    <div class="form-group w-50">
+      <input type="text" class="form-control" placeholder="First Name" formControlName="firstname"  [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }">
+      <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+        <div *ngIf="f.firstname.errors.required">Firstname is required</div>
+      </div>
+      </div>
+
+      <div class="form-group w-50">
+        <input type="text" class="form-control" placeholder="Last Name" formControlName="lastname" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }">
+        <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+          <div *ngIf="f.lastname.errors.required">Lastname is required</div>
+        </div>
+        </div>
+
+        <div class="form-group w-50">
+          <input type="date" class="form-control" placeholder="DateofBirth"
+           formControlName="dob" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }">
+           <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+            <div *ngIf="f.dob.errors.required">DOB is required</div>
+          </div>
+          </div>
+
+    <div class="form-group w-50">
+      <input type="email" class="form-control" placeholder="Email" formControlName="email"
+      [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email is required</div>
+      </div>
+      </div>
+
+
+      <div class="form-group log-status w-50">
+        <input type="password" class="form-control" placeholder="Password" formControlName="password" [(ngModel)]="password"   [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  >
+
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+        <!-- <ng9-password-strength-bar
+        [passwordToCheck]="password"
+        [barLabel]="barLabel"
+        [customThresholds]="thresholds"
+        [barColors]="myColors">
+    </ng9-password-strength-bar> -->
+
+    <ng9-password-strength-bar
+  [passwordToCheck]="password"
+  [barLabel]="barLabel"
+  [barColors]="myColors"
+  [baseColor]="baseColor"
+  [strengthLabels]="strengthLabels"
+  [customThresholds]="thresholds"
+
+  (onStrengthChanged)="strengthChanged($event)">
+</ng9-password-strength-bar>
+      </div>
+
+
+      <!-- <password-strength-meter [password]="password"></password-strength-meter> -->
+
+      <!-- <app-password-strength []="account.password" [barLabel]="barLabel"></app-password-strength> -->
+
+
+      <div class="form-group log-status w-50">
+        <input type="password" class="form-control" placeholder="Confirm Password" formControlName="conpassword" [ngClass]="{ 'is-invalid': submitted && f.conpassword.errors }" >
+
+        <div *ngIf="submitted && f.conpassword.errors" class="invalid-feedback">
+        <div *ngIf="f.conpassword.errors.required">Password is required</div>
+        <div *ngIf="f.conpassword.errors.minlength">Password must be at least 6 characters</div>
+        <div *ngIf="f.conpassword.errors.confirmedValidator">Password is not Matched</div>
+        </div>
+
+      </div>
+
+      <select name="my-select" class="form-control w-50" formControlName="question"(change)="selectChange($event)" [ngClass]="{ 'is-invalid': submitted && f.question.errors }">
+        <option value="" [selected]="isSelected"> Select the Question </option>
+        <option [value]="item.id" *ngFor="let item of question">
+            {{item.name}}
+        </option>
+        <div *ngIf="submitted && f.question.errors" class="invalid-feedback">
+          <div *ngIf="f.question.errors.required">Question is required</div>
+        </div>
+      </select>
+
+
+      <div class="form-group log-status w-50">
+        <input type="text" class="form-control" placeholder="Answer" formControlName="answer" [ngClass]="{ 'is-invalid': submitted && f.answer.errors }">
+        <div *ngIf="submitted && f.answer.errors" class="invalid-feedback">
+          <div *ngIf="f.answer.errors.required">Answer is required</div>
+        </div>
+      </div>
+
+      <!-- [disabled]="!myForm.valid" -->
+      <button type="submit"  class="log-btn"><i class="mdi mdi-account"></i> Submit </button>
+
+
+  </div>
+</form>
+
+</div>
+
+<div class="error" *ngIf="errorMessage">
+  <strong class="">{{ errorMessage  }}</strong>
+  <span (click) ="cloneError()" class="close"> X</span>
+  </div>
+<div class="jumbotron py-3 bg-danger" *ngIf='!formHide'>
+
+<div class="alert p-2  w-50 " *ngIf="showMsg">
+  <h2 class="text-white">Registration Success!!!</h2>
+  <div class="" style="font-size: 20px;"><a routerLink='/'>Please click here to login!</a></div>
+</div>
+</div>
+<div class="">
+    <div class="box">
+        <div class="box_wrapper">
+            <div class="left">
+              <p class="">Already have an Accoboxunt</p>
+            </div>
+            <div class="right">
+              <a routerLink='/' class="">Login</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<p class="pb-3">Important information</p>
+
+<div class="impliment_information">
+    <p class="implemnt_plant">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur vel beatae at qui similique dolor quae voluptas obcaecati voluptate maxime. Itaque aut sit libero, quisquam expedita minima consequuntur placeat nulla impedit velit voluptate. Veniam quia quo et sit sunt ipsam asperiores dolorem iusto odit ex explicabo porro praesentium cupiditate earum nam neque voluptatum quisquam odio, alias possimus? Corporis qui eius recusandae magni
+    </p>
+</div>
+
+
+</div>
+</div>

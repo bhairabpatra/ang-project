@@ -1,0 +1,53 @@
+
+
+.how_to_app{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+
+}
+.main_heading{
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.sub_heading{
+  font-size: 15px;
+}
+
+.texts {
+    font-size: 12px;
+}
+
+.main_heading{
+  padding: 25px 0px;
+  .main{
+      font-size: 20px;
+      font-weight: 700;
+  }
+  .sub_heading{
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+}
+.what_happens{
+  padding: 10px 0px;
+  font-size: 20px;
+  color: #000;
+  font-weight: 700;
+}
+
+.continoous_btn{
+    border-radius: 30px;
+    background-color: red;
+    border: 0;
+    font-size: 12px;
+
+}
+.borders{
+  border: 1px solid #CCC;
+  padding: 20px;
+  background-color: rgb(245, 245, 245);
+
+}

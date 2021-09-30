@@ -1,0 +1,60 @@
+
+<app-loader></app-loader>
+<div class="conatiner">
+  <div class="login_wrapper">
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit( )">
+
+  <div class="logso text-center">
+
+
+    <img src="../../../assets/logo1.png" width="20%">
+
+
+  </div>
+
+
+
+  <div class="login-form">
+
+
+    <div class="form-group ">
+      <input type="text" class="form-control" placeholder="{{'Email' | translate }}" formControlName="email"  [ngClass]="{ 'is-invalid': submitted && f.email.errors }" >
+
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required"> {{ 'Emailrequired' | translate }}</div>
+        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+    </div>
+    </div>
+
+
+    <div class="form-group log-status">
+      <input   [type]="fieldTextType ? 'text' : 'password'"     class="form-control" placeholder="{{'Password' | translate }}" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+      <i
+      class="fa password_show_hide"  [ngClass]="{ 'fa-eye-slash': !fieldTextType, 'fa-eye': fieldTextType}"
+      (click)="toggleFieldTextType()"
+    ></i>
+
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">{{ 'Password_required' | translate }}</div>
+        <div *ngIf="f.password.errors.minlength">{{ 'password_len+msg' | translate }}</div>
+    </div>
+    </div>
+
+<!-- //[disabled]="!myForm.valid" -->
+    <button type="submit"  class="log-btn"><i class="mdi mdi-account"></i>{{'Login' | translate }}</button>
+
+    <div class="login_btm">
+      <p style="font-weight: 600;"> {{ 'passwordforgotmessage'  | translate  }} </p>
+      <a class="link" routerLink='/forgotpassword'>{{ 'password_forgot' | translate }}</a>
+      <a class="link" routerLink='/Register' href="#"> {{ 'Register' | translate  }}</a>
+    </div>
+    <div class="error" *ngIf="errorMessage">
+    <strong class="">{{ errorMessage  }}</strong>
+    <span (click) ="cloneError()" class="close"> X</span>
+    </div>
+
+</div>
+</form>
+</div>
+</div>

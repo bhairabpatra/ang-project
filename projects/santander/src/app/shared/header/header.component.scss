@@ -1,0 +1,80 @@
+.active{
+  color: #ec0000;
+}
+
+.bg-red{
+  background-color:#ec0000 ;
+  z-index: 1;
+}
+
+
+.btn-default
+{
+    background-color: #FFF;
+    padding: 5px 15px;
+
+
+}
+.logo{
+
+  margin-top: -10px;
+}
+ul.navbar-nav.ml-auto {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation_bar {
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  .logos{
+
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+
+  }
+}
+
+.bg-red{
+  background-color: #ec0000;
+  z-index: 1;
+  height: 60px;
+}
+.btn-outline-light{
+    padding: 5px;
+    background-color: transparent;
+}
+.btn-outline-light
+{
+  background-color: transparent;
+}
+.btn-outline-light:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled).active, .show > .btn-outline-light.dropdown-toggle {
+  color: #212529;
+  background-color: transparent;
+  border-color: 1px solid #FFF;
+}
+.btn-outline-light:focus, .btn-outline-light.focus {
+  box-shadow: none !important;
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+  position: absolute;
+  margin-top: 12px;
+  cursor: pointer;
+}
+.user_name{
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.label_select{
+  border:1px solid #FFF;
+  padding: 0px 10px;
+  height: 20px;
+  background-color: #FFF;
+  color: #ec0000;
+}

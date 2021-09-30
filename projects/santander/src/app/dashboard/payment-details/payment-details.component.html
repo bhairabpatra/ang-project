@@ -1,0 +1,119 @@
+<div class="payment_details mt-4 mb-3">
+      <h1 class="heading">Payment Details</h1>
+      <p class="sub_heading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique deserunt odit maiores error earum voluptate impedit optio deleniti nostrum aspernatur!</p>
+
+</div>
+
+<h2 class="primary_heading">Your  current Circumstanceces</h2>
+<hr class="h_bar">
+
+<p class="texts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati doloremque id consequatur similique officia aperiam quae blanditiis enim? Ab, fugiat!</p>
+
+<p class="texts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores a sunt quaerat excepturi eligendi consequuntur, assumenda exercitationem amet minima voluptatibus dicta quidem numquam sit hic? Dolorum quam eveniet perspiciatis.</p>
+
+<p class="texts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores a sunt quaerat excepturi eligendi consequuntur, assumenda exercitationem amet minima voluptatibus dicta quidem numquam sit hic? Dolorum quam eveniet perspiciatis.</p>
+
+
+
+<h2 class="primary_heading py-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit beatae aliquam non exercitationem.</h2>
+
+<h2 class="primary_heading">Your Direct debit details</h2>
+<hr >
+
+<div class="col-md-12 mt-3">
+  <div class="form_wraper">
+    <div class="row">
+      <div class="col-sm-12 alert alert-warning" *ngIf="error">
+      {{error}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 alert alert-success" *ngIf="customers.message">
+    {{customers.message}}
+  </div>
+</div>
+
+   <form #newUserForm="ngForm" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+
+
+
+
+
+    <div class="form-group w-50">
+      <select class="form-control" name="code" [(ngModel)]="model.sortcode" #country="ngModel" [ngClass]="{'invalid-data': country.invalid && f.submitted, 'valid-data': country.valid && f.submitted}" required>
+        <option value="" hidden> Select Code </option>
+        <option *ngFor="let item of sortcode" [value]="item">
+          {{item}}
+        </option>
+      </select>
+
+      <div *ngIf="country.invalid && f.submitted">
+        <span style="color: red; font-size: 13px;">Please Select code.</span>
+      </div>
+    </div>
+
+      <div class="form-group w-50">
+
+        <input type="text" class="form-control"  [(ngModel)]="model.accountnumber"
+        name="accountnumber" placeholder="Account Number" #accountnumbers="ngModel" required [ngClass]="{ 'is-invalid': f.submitted && accountnumbers.invalid }" required minlength="6">
+
+        <div *ngIf="f.submitted && accountnumbers.invalid" class="invalid-feedback">
+          <div *ngIf="accountnumbers.errors">
+            <span style="color: red;font-size: 13px;">Account Number is required</span></div>
+      </div>
+
+      </div>
+      <div class="form-group w-50">
+        <input type="text" class="form-control"  placeholder="Account holder Name" [(ngModel)]="model.accountholdername"
+        name="accountholdername" required #userName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && userName.invalid }" required minlength="6"  >
+
+        <div *ngIf="f.submitted && userName.invalid" class="invalid-feedback">
+          <div *ngIf="userName.errors">
+            <span style="color: red; font-size: 13px;">Account holder  Name is required</span></div>
+      </div>
+
+      </div>
+      <!-- [disabled]="!newUserForm.form.valid" -->
+
+     <div class="savecont py-3">
+      <button  type="submit"    class="btn btn-primary save_cont">Save & Continues</button>
+      </div>
+    </form>
+  </div>
+  </div>
+  <div class="mb-5 mt-5">
+
+    <div class="switch-field">
+      <input type="radio" id="radio-three" name="switch-two" value="yes" checked/>
+      <label for="radio-three text-dark">on First Day each of month</label>
+      <input type="radio" id="radio-four" name="switch-two" value="maybe" />
+      <label for="radio-four">on a specific day each month</label>
+     </div>
+     </div>
+
+<div class="direct_debt">
+    <h2>Direct Debt Guarantee</h2>
+    <p class="texts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, reiciendis?</p>
+    <ul class="list">
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, repudiandae! Non, porro voluptas illo ullam reiciendis obcaecati. Laboriosam, alias sint.</li>
+
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, repudiandae! Non, porro voluptas illo ullam reiciendis obcaecati. Laboriosam, alias sint.</li>
+
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, repudiandae! Non, porro voluptas illo ullam reiciendis obcaecati. Laboriosam, alias sint.</li>
+
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, repudiandae! Non, porro voluptas illo ullam reiciendis obcaecati. Laboriosam, alias sint.</li>
+    </ul>
+</div>
+
+
+
+<div class="important_info">
+    <h3 class="py-2">Importnt information</h3>
+
+    <div class="your_home">
+        <h2 class="primary_heaing">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, numquam.</h2>
+        <p class="texts"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas fugit eos cum? Exercitationem magni consequatur voluptatem id impedit eos a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam cum fuga ducimus illum illo praesentium saepe assumenda similique, quia animi? </p>
+    </div>
+</div>
